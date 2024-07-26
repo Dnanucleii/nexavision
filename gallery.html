@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fantasy Future House - Gallery</title>
+    <style>
+         body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('images/homepage.jpeg');
+            background-size: cover;
+        }
+
+        .topnav {
+            background-color: #333;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        .topnav a {
+            display: inline-block;
+            color: #fff;
+            padding: 14px 20px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+
+        .topnav a:hover {
+            background-color: #555;
+        }
+		.logo img {
+            width: 100px; /* Adjust logo size as needed */
+            margin-right: 20px;
+        }
+        
+        .content {
+            padding: 20px;
+            color: white;
+            background-color: rgba(0, 0, 0, 0.5);
+            margin-top: 20px;
+        }
+
+        .content h2 {
+            margin-top: 0;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center; /* Center content horizontally */
+            align-items: flex-start; /* Align content to the top */
+            padding-top: 50px; /* Adjust top padding */
+        }
+
+        .column {
+            flex-basis: 45%; /* Adjust column width as needed */
+            padding: 20px;
+            color: white;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+<div class="topnav">
+    <div class="logo">
+        <img src="images/nexavision.png" alt="NexaVision">
+    </div>
+    <div class="topnav">
+        <a class="active" href="homepage.html">HOME</a>
+        <a href="gallery.html">GALLERY</a>
+        <a href="features.html">FEATURES</a>
+        <a href="homepage2.html#about">ABOUT</a>
+        <a href="homepage2.html#contact">CONTACT</a>
+    </div>
+</div>
+
+<div class="container">
+    <main class="column">
+        <h2>Gallery</h2>
+        <p>Explore our gallery to see stunning visuals of our Fantasy Future House.</p>
+        <!-- Video of interior house features -->
+        <video width="100%" controls>
+            <source src="images/video.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </main>
+</div>
+
+<footer>
+    For educational purposes only
+</footer>
+
+</body>
+</html>

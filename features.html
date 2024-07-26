@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fantasy Future House - Features</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f7f7f7;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h1, h2, h3 {
+            color: #333;
+            text-align: center;
+        }
+
+        /* Top Navigation Styles */
+        .topnav {
+            background-color: #333;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        .topnav a {
+            display: inline-block;
+            color: #fff;
+            padding: 14px 20px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+
+        .topnav a:hover {
+            background-color: #555;
+        }
+
+        .logo img {
+            width: 100px; /* Adjust logo size as needed */
+            margin-right: 20px;
+        }
+
+        /* Feature Section Styles */
+        .feature {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            margin-top: 40px;
+        }
+
+        .feature-item {
+            flex-basis: 45%;
+            margin: 10px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+        }
+
+        .feature-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .feature-img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+
+        .feature-caption {
+            padding: 20px;
+            background-color: #fff;
+        }
+
+        .feature-caption h3 {
+            margin-top: 0;
+            font-size: 1.5rem;
+            color: #333;
+        }
+
+        .feature-caption p {
+            color: #666;
+            margin-bottom: 0;
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.9);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            position: relative;
+            margin: auto;
+            width: 80%;
+            max-width: 700px;
+        }
+
+        .close {
+            position: absolute;
+            top: 15px;
+            right: 35px;
+            color: #fff;
+            font-size: 40px;
+            font-weight: bold;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #bbb;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .mySlides {
+            display: none;
+            text-align: center;
+        }
+
+        .mySlides img {
+            width: 100%;
+            max-height: 80vh; /* Adjust the height as needed */
+            object-fit: contain;
+        }
+
+        .prev,
+        .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding: 16px;
+            margin-top: -22px;
+            color: white;
+            font-weight: bold;
+            font-size: 20px;
+            transition: 0.3s;
+            user-select: none;
+        }
+
+        .prev:hover,
+        .next:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        .prev {
+            left: 0;
+        }
+
+        .next {
+            right: 0;
+        }
+    </style>
+</head>
+<body>
+
+<div class="topnav">
+    <div class="logo">
+        <img src="images/nexavision.png" alt="NexaVision">
+    </div>
+    <a href="homepage.html">HOME</a>
+    <a href="gallery.html">GALLERY</a>
+    <a class="active" href="features.html">FEATURES</a>
+    <a href="homepage2.html#about">ABOUT</a>
+    <a href="homepage2.html#contact">CONTACT</a>
+</div>
+
+<div class="container">
+    <h1>Innovative Design</h1>
+    <h2>Explore our home design</h2>
+
+    <div class="feature">
+        <div class="feature-item" onclick="openModal();currentSlide(1)">
+            <img class="feature-img" src="images/house1.jpg" alt="House">
+            <div class="feature-caption">
+                <h3>Welcome to Tomorrow</h3>
+                <p>Discover our upcoming modern homes featuring state-of-the-art design and unparalleled luxury. Stay tuned for the future of living!</p>
+            </div>
+        </div>
+        
+        <div class="feature-item" onclick="openModal();currentSlide(3)">
+            <img class="feature-img" src="images/house2.jpg" alt="Dining">
+            <div class="feature-caption">
+                <h3>Innovative Elegance</h3>
+                <p>Our futuristic homes are on the horizon. Get ready for exquisite comfort. Coming soon to elevate your lifestyle!</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <div class="modal-content">
+        <div class="mySlides">
+            <img src="images/h2.jpg" style="width:100%">
+        </div>
+
+        <div class="mySlides">
+            <img src="images/h3.jpg" style="width:100%">
+        </div>
+
+        <div class="mySlides">
+            <img src="images/h4.jpg" style="width:100%">
+        </div>
+
+        <div class="mySlides">
+            <img src="images/h5.jpg" style="width:100%">
+        </div>
+
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
+</div>
+
+<footer style="text-align: center; padding: 10px; background-color: rgba(0, 0, 0, 0.5); color: white;">
+    For educational purposes only
+</footer>
+
+<script>
+    var slideIndex = 1;
+
+    function openModal() {
+        document.getElementById("myModal").style.display = "flex";
+        showSlides(slideIndex);
+    }
+
+    function closeModal() {
+        document.getElementById("myModal").style.display = "none";
+    }
+
+    function plusSlides(n) {
+        showSlides(slideIndex += n);
+    }
+
+    function currentSlide(n) {
+        showSlides(slideIndex = n);
+    }
+
+    function showSlides(n) {
+        var i;
+        var slides = document.getElementsByClassName("mySlides");
+        if (n > slides.length) {slideIndex = 1}
+        if (n < 1) {slideIndex = slides.length}
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        slides[slideIndex-1].style.display = "block";
+    }
+</script>
+
+</body>
+</html>
