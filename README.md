@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Future</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('images/homepage.jpeg');
+            background-size: cover;
+        }
+
+        .initial-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+            text-align: center;
+        }
+
+        .initial-container h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+
+        .initial-container .image-button {
+            position: relative;
+            cursor: pointer;
+        }
+
+        .initial-container .image-button img {
+            width: 100px; /* Adjust size as needed */
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-30px);
+            }
+            60% {
+                transform: translateY(-15px);
+            }
+        }
+
+        .initial-container .image-button .tooltip {
+            position: absolute;
+            top: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: black;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 14px;
+            opacity: 0;
+            transition: opacity 0.3s;
+            white-space: nowrap;
+        }
+
+        .initial-container .image-button:hover .tooltip {
+            opacity: 1;
+        }
+
+        .topnav {
+            background-color: #333;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        .topnav a {
+            display: inline-block;
+            color: #fff;
+            padding: 14px 20px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+
+        .topnav a:hover {
+            background-color: #555;
+        }
+
+        .logo img {
+            width: 100px; /* Adjust logo size as needed */
+            margin-right: 20px;
+        }
+
+        .content {
+            padding: 20px;
+            color: white;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .content h2 {
+            margin-top: 0;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column; /* Align columns vertically */
+            align-items: center; /* Center content horizontally */
+            padding-top: 50px; /* Adjust top padding */
+        }
+
+        .column {
+            width: 90%; /* Adjust column width as needed */
+            padding: 80px;
+            color: white;
+            background-color: rgba(0, 0, 0, 0.5);
+            margin: 30px 0; /* 30px margin on top and bottom */
+        }
+
+        .bottom-container {
+            display: flex;
+            justify-content: space-between; /* Space out columns */
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            margin-top: 50px; /* Add some space above the bottom container */
+        }
+
+        .bottom-column {
+            flex-basis: 45%; /* Adjust column width as needed */
+            padding: 20px;
+            margin: 30px; /* Add 30px margin for spacing */
+            max-height: 200px; /* Set a max height */
+            overflow: hidden; /* Hide overflow content */
+        }
+
+        .bottom-column:hover {
+            overflow: auto; /* Enable scroll on hover */
+        }
+
+        #about {
+            background-color: rgba(255, 255, 255, 0.8); /* Light background */
+            color: black;
+            border-left: 5px solid #f39c12; /* Accent border */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow effect */
+        }
+
+        #contact {
+            background-color: rgba(255, 255, 255, 0.8); /* Light background */
+            color: black;
+            border-left: 5px solid #3498db; /* Accent border */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow effect */
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .hero {
+            width: 100%;
+            height: 100vh; /* Full viewport height */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-image: url('images/.png');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            position: relative;
+        }
+
+        .banner {
+            width: 80%;
+            height: 600px; /* Adjust the height as needed */
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: left-side;
+            padding: 20px;
+            color: white;
+            transition: background-image 1s ease-in-out;
+        }
+
+        .banner h2, .banner p {
+            margin: 0;
+        }
+
+        .banner h2 {
+            margin-bottom: 30px; /* Add spacing below the heading */
+        }
+
+        .banner button {
+            margin-top: 50px;
+            padding: 10px 20px;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .banner button:hover {
+            background-color: #2980b9;
+        }
+
+        audio {
+            display: none;
+        }
+
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            z-index: 1000;
+            flex-direction: column;
+        }
+
+        .overlay button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .overlay button:hover {
+            background-color: #2980b9;
+        }
+    </style>
+</head>
+<body>
+<audio id="welcomeAudio" src="images/music.mp3"></audio>
+
+<div class="initial-container" id="welcomeScreen">
+    <h1>Welcome to your future house</h1>
+    <div class="image-button" onclick="enterHomepage()">
+        <img src="images/paperclip.png" alt="Open">
+        <div class="tooltip">Click me!</div>
+    </div>
+</div>
+
+<div id="homepage" style="display: none;">
+    <div class="topnav">
+        <div class="logo">
+            <img src="images/nexavision.png" alt="NexaVision">
+        </div>
+        <div class="topnav">
+            <a class="active" href="#home">HOME</a>
+            <a href="gallery.html">GALLERY</a>
+            <a href="features.html">FEATURES</a>
+            <a href="#about">ABOUT</a>
+            <a href="#contact">CONTACT</a>
+        </div>
+    </div>
+
+    <!-- Hero section -->
+    <div class="hero" id="home">
+        <div class="banner">
+            <h2 style="font-size:4vw"><p>WELCOME</p>
+            <p>TO FUTURE HOUSE</p></h2>
+            <p style="text-indent: 50px;">Embark on a visionary glimpse into the future of home design, </p>
+            <p style="text-indent: 50px;">where cutting-edge technology and modern aesthetics converge.</p>
+            <button onclick="document.getElementById('about').scrollIntoView({ behavior: 'smooth' });">More Info</button>
+        </div>
+    </div>
+
+    <!-- Bottom container for About and Contact -->
+    <div class="bottom-container">
+        <div class="bottom-column" id="about">
+            <h2>Vision</h2>
+            <p>To pioneer futuristic homes that redefine modern living through innovative and sustainable design.</p>
+             <h2>Mission</h2>
+            <p>At Fantasy Future House, we are committed to integrating cutting-edge technology and sustainable practices to create homes that inspire and elevate the way people live.</p>
+        </div>
+        <div class="bottom-column" id="contact">
+        <h2>Contact</h2>
+        <div style="display: flex; align-items: center; margin-bottom: 20px;">
+            <img src="images/address.png" alt="Address Icon" style="width: 30px; margin-right: 10px;">
+            <p>23 Jalan Sarimah, Taman Tasik Cempaka , 43000 Kajang, Selangor, Malaysia</p>
+        </div>
+        <div style="display: flex; align-items: center; margin-bottom: 20px;">
+            <img src="images/phone.png" alt="Phone Icon" style="width: 30px; margin-right: 10px;">
+            <p>+60106778978</p>
+        </div>
+        <div style="display: flex; align-items: center;">
+            <img src="images/email.png" alt="Email Icon" style="width: 30px; margin-right: 10px;">
+            <p>contact@fantasyfuturehouse.com</p>
+        </div>
+    </div>
+    </div>
+</div>
+<footer style="text-align: center; padding: 10px; background-color: rgba(0, 0, 0, 0.5); color: white;">
+        For educational purposes only
+    </footer>
+<script>
+    // Slideshow functionality
+    let currentSlide = 0;
+    const slides = [
+        'images/banner.png', // Add your image paths here
+        'images/sec_slide.jpg',
+        'images/third_slide.jpg'
+    ];
+
+    function changeSlide() {
+        const banner = document.querySelector('.banner');
+        banner.style.backgroundImage = `url(${slides[currentSlide]})`;
+        currentSlide = (currentSlide + 1) % slides.length;
+    }
+
+    // Change slide every 5 seconds
+    setInterval(changeSlide, 5000);
+
+    // Initial call to set the first slide
+    changeSlide();
+
+    // Auto-scroll functionality
+    function autoScroll(element) {
+        let scrollInterval;
+
+        element.addEventListener('mouseenter', () => {
+            scrollInterval = setInterval(() => {
+                element.scrollTop += 1;
+                if (element.scrollTop + element.clientHeight >= element.scrollHeight) {
+                    element.scrollTop = 0;
+                }
+            }, 20); // Adjust the scroll speed here
+        });
+
+        element.addEventListener('mouseleave', () => {
+            clearInterval(scrollInterval);
+        });
+    }
+
+    // Apply auto-scroll to the bottom columns
+    const aboutColumn = document.getElementById('about');
+    const contactColumn = document.getElementById('contact');
+    autoScroll(aboutColumn);
+    autoScroll(contactColumn);
+
+    function enterHomepage() {
+        document.getElementById('welcomeScreen').style.display = 'none';
+        document.getElementById('homepage').style.display = 'block';
+        document.getElementById('welcomeAudio').play();
+    }
+</script>
+</body>
+</html>
