@@ -190,7 +190,7 @@
 <div class="container">
     <h1>Innovative Design</h1>
     <h2>Explore our home design</h2>
-
+    
     <div class="feature">
         <div class="feature-item" onclick="openModal();currentSlide(1)">
             <img class="feature-img" src="images/house1.jpg" alt="House">
@@ -200,12 +200,28 @@
             </div>
         </div>
         
-        <div class="feature-item" onclick="openModal();currentSlide(3)">
-            <img class="feature-img" src="images/house2.jpg" alt="Dining">
+        <div class="feature-item" onclick="openModal();currentSlide(2)">
+            <img class="feature-img" src="images/house2.jpg" alt="House">
             <div class="feature-caption">
                 <h3>Innovative Elegance</h3>
                 <p>Our futuristic homes are on the horizon. Get ready for exquisite comfort. Coming soon to elevate your lifestyle!</p>
-            </div>
+           </div>
+        </div>
+    </div>
+
+    <div class="feature">
+        <div class="feature-item" onclick="openModal();currentSlide(3)">
+            <img class="feature-img" src="images/house3.jpg" alt="House">
+            <div class="feature-caption">
+                <h3>Coming Soon</h3>
+                </div>
+        </div>
+        
+        <div class="feature-item" onclick="openModal();currentSlide(4)">
+            <img class="feature-img" src="images/house4.jpg" alt="Dining">
+            <div class="feature-caption">
+                <h3>Coming Soon</h3>
+                </div>
         </div>
     </div>
 </div>
@@ -215,20 +231,22 @@
     <span class="close" onclick="closeModal()">&times;</span>
     <div class="modal-content">
         <div class="mySlides">
+            <img src="images/h1.jpg" style="width:100%">
+        </div>
+
+        <div class="mySlides">
             <img src="images/h2.jpg" style="width:100%">
         </div>
 
         <div class="mySlides">
-            <img src="images/h3.jpg" style="width:100%">
-        </div>
+			<div style="width:100%; text-align:center; font-size:2em; color:grey;">Coming Soon</div>
+		</div>
+
 
         <div class="mySlides">
-            <img src="images/h4.jpg" style="width:100%">
-        </div>
+			<div style="width:100%; text-align:center; font-size:2em; color:grey;">Coming Soon</div>
+		</div>
 
-        <div class="mySlides">
-            <img src="images/h5.jpg" style="width:100%">
-        </div>
 
         <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
         <a class="next" onclick="plusSlides(1)">&#10095;</a>
